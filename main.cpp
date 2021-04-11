@@ -1,63 +1,63 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-
+//nome matriadelclasse
 int main() {
-	int numero_del_celluelare[500];
-	string nome_della_persona[500];
-	int contatti;
-	int il_modo_di_cercare;
-	int il_numero;
-	string il_nome;
+	string nomedelprof[2];
+	string matrialedelclasse[2];
+	int quanto;
+	int ilmododicercare;
+	string matrialedelclasse;
+	string nomedelprof;
 	//quantità dei contatti
-	cout << "Inserici quanti contatti sarebbero inseriti: ";
-	cin >> contatti;
+	cout << "Quanti informazioni sarebbero inseriti: ";
+	cin >> quanto;
+
 	
 	// Create a text file
-	ofstream MyWriteFile("rubica_del_cellulare.txt");
+	ofstream MyWriteFile("esercizio_di_prof_maria.txt");
 	
 	//inserire il numero e il nome
-	for(int x = 0; x < contatti; x ++){
+	for(int x = 0; x < quanto; x ++){
 	cout << "inserici il nome: ";
-	cin >> nome_della_persona[x];
+	cin >> nomedelprof[x];
 	cout << endl;
-	cout << "inserici il numero: ";
-	cin >> numero_del_celluelare[x];
+	cout << "inserici il materiale della classe: ";
+	cin >> matrialedelclasse[x];
 	cout << endl;
 	}
-	for(int x = 0; x < contatti; x ++){
-	MyWriteFile << nome_della_persona[x];
+	for(int x = 0; x < quanto; x ++){
+	MyWriteFile << nomedelprof[x];
 	MyWriteFile << endl;
-	MyWriteFile << numero_del_celluelare[x];
+	MyWriteFile << matrialedelclasse[x];
 	MyWriteFile << endl;
 	}
 	
 	// Close the file
 	MyWriteFile.close();
 	
-	// chiedere l'utente con quale modo vuole cercare il contatto
+	// chiedere l'utente in quale modo vuole cercare il contatto
 	cout << "In quale modo vorresti cercare il contatto, nome(0), numero(1): ";
-	cin >> il_modo_di_cercare;
+	cin >> ilmododicercare;
 
 string x;	
 	// Read from the text file
-	ifstream MyReadFile("rubica_del_cellulare.txt");
+	ifstream MyReadFile("esercizio_di_prof_maria.txt");
 
 	// Use a while loop together with the getline() function to read the file line by line
 	while (getline (MyReadFile, x)) {
 		
 			//metodo di cercare via nome	
-	if(il_modo_di_cercare == 0){
+	if(ilmododicercare == 0){
 		// Chiedere dall'utente di inserire sia il nome sia il numero secondo quello che ha scelot
 		cout << "Inserici il nome: ";
-		cin >> il_nome;
+		cin >> nomedelprof;
 		cout << endl;
-		for(int x = 0; x < contatti; x ++){
+		for(int x = 0; x < quanto; x ++){
 		
-			if(nome_della_persona[x] == il_nome){
+			if(nomedelprof[x] == nomedelprof){
 			
-			cout << nome_della_persona[x];
-			cout << numero_del_celluelare[x];
+			cout << matrialedelclasse[x];
 			
 			}		
 		}
@@ -67,15 +67,14 @@ string x;
 	else{
 		
 		// Chiedere dall'utente di inserire sia il nome sia il numero secondo quello che ha scelot
-		cout << "Inserici il numero: ";
-		cin >> il_numero;
+		cout << "Inserici il materiale della classe: ";
+		cin >> matrialedelclasse;
 		cout << endl;
-		for(int x = 0; x < contatti; x ++){
+		for(int x = 0; x < quanto; x ++){
 		
-			if(numero_del_celluelare[x] == il_numero){
+			if(matrialedelclasse[x] == matrialedelclasse){
 			
-			cout << nome_della_persona[x] << endl;
-			cout << numero_del_celluelare[x] << endl;
+			cout << nomedelprof[x] << endl;
 			
 			}
 		}
